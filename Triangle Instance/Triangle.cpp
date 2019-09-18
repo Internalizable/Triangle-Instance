@@ -56,12 +56,7 @@ void buildTrianglePiece(int base, char usedChar) {
 	for (int startingInt = 1; startingInt <= base; startingInt = startingInt + 2) {
 		++currentHeight;
 
-		if (startingInt == base) {
-			for (int i = 1; i <= base; ++i) {
-				cout << usedChar;
-			}
-		} else {
-			int getIndent{ maxHeight - currentHeight };
+		int getIndent{ maxHeight - currentHeight };
 
 			for (int i = 1; i <= getIndent; ++i) {
 				cout << " ";
@@ -74,8 +69,8 @@ void buildTrianglePiece(int base, char usedChar) {
 					cout << endl;
 				}
 			}
-		}
 
+		
 	}
 	
 }
