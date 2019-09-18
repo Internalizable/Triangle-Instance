@@ -3,7 +3,9 @@
 using namespace std;
 
 int getMaxTriangleHeight(int base);
-void buildTrianglePiece(int base, char usedChar, int maxHeight);
+void buildTrianglePiece(int base, char usedChar);
+
+int maxHeight{};
 
 int main() {
 
@@ -33,9 +35,9 @@ int main() {
 	char characterUsed{};
 	cin >> characterUsed;
 
-	int maxHeight{ getMaxTriangleHeight(baseLength) };
+	maxHeight = getMaxTriangleHeight(baseLength);
 
-	buildTrianglePiece(baseLength, characterUsed, maxHeight);
+	buildTrianglePiece(baseLength, characterUsed);
 }
 
 int getMaxTriangleHeight(int base) {
@@ -48,7 +50,7 @@ int getMaxTriangleHeight(int base) {
 	return currentHeight;
 }
 
-void buildTrianglePiece(int base, char usedChar, int maxHeight) {
+void buildTrianglePiece(int base, char usedChar) {
 	int currentHeight{ 0 };
 
 	for (int startingInt = 1; startingInt <= base; startingInt = startingInt + 2) {
